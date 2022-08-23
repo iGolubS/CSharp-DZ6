@@ -1,14 +1,18 @@
 // Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
 // 0, 7, 8, -2, -2 -> 2        1, -7, 567, 89, 223-> 3
 
+// Я придумал 2 рабочих решения.
+
+// Решение 1.
+
 // Console.Clear();
-// Console.WriteLine("Введите количество элементов массива: ");
+// Console.WriteLine("Сколько чисел вы хотите внести?: ");
 // int size = Convert.ToInt32(Console.ReadLine());
 // int[] Array = new int[size];
 // int PositiveNumber = 0;
 // for (int i = 0; i < size; i++)
 // {   
-//     Console.WriteLine($"Введите {i+1} элемент массива: ");
+//     Console.WriteLine($"Введите {i+1}е число: ");
 //     Array[i] = Convert.ToInt32(Console.ReadLine());
 //     if (Array[i]>0)
 //     {
@@ -17,6 +21,24 @@
 // }
 // Console.Write("Ваш массив: ");
 // Console.WriteLine(String.Join(" ", Array));
+// Console.WriteLine($"Колличество чисел больше нуля: {PositiveNumber}");
+
+
+
+// Решение 2.
+
+// Console.Clear();
+// Console.Write("Введите через пробел сколько угодно чисел: ");
+// string[] UserNumbers = Console.ReadLine().Split(' ',StringSplitOptions.RemoveEmptyEntries);
+// Console.WriteLine(String.Join(" ", UserNumbers));
+// int PositiveNumber = 0;
+// for (int i=0; i < UserNumbers.Length; i++)
+// {
+//     if (int.Parse(UserNumbers[i])>0)
+//     {
+//         PositiveNumber++;
+//     }
+// }
 // Console.WriteLine($"Колличество чисел больше нуля: {PositiveNumber}");
 
 
@@ -130,30 +152,30 @@
 
 // Надеюсь я правильно понял, что нужно задать массив, а потом сделать его клон, скопировав каждый элемент.
 
-int[] CreateRandomArray(int N, int start, int end)
-{
-    int[] RandomArray = new int[N];
-    for (int i = 0; i < N; i++)
-    {
-        RandomArray[i] = new Random().Next(start, end + 1);
-    }
-    return RandomArray;
-}
+// int[] CreateRandomArray(int N, int start, int end)
+// {
+//     int[] RandomArray = new int[N];
+//     for (int i = 0; i < N; i++)
+//     {
+//         RandomArray[i] = new Random().Next(start, end + 1);
+//     }
+//     return RandomArray;
+// }
 
-Console.Clear();
-Console.WriteLine("Введите количество элементов в массиве: ");
-int num = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите первое число случайно генерируемого диапазона: ");
-int min = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите последнее число случайно генерируемого диапазона: ");
-int max = Convert.ToInt32(Console.ReadLine());
-int[] MyRandomArray = CreateRandomArray(num, min, max);
-Console.Write("Ваш рандомный массив:   ");
-Console.WriteLine(String.Join(" ", MyRandomArray));
-int[] CloneMyRandomArray = new int[num];
-for (int i=0; i<num; i++)
-{
-    CloneMyRandomArray[i]=MyRandomArray[i];
-}
-Console.Write("Клон рандомного массив: ");
-Console.WriteLine(String.Join(" ", CloneMyRandomArray));
+// Console.Clear();
+// Console.WriteLine("Введите количество элементов в массиве: ");
+// int num = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите первое число случайно генерируемого диапазона: ");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите последнее число случайно генерируемого диапазона: ");
+// int max = Convert.ToInt32(Console.ReadLine());
+// int[] MyRandomArray = CreateRandomArray(num, min, max);
+// Console.Write("Ваш рандомный массив:   ");
+// Console.WriteLine(String.Join(" ", MyRandomArray));
+// int[] CloneMyRandomArray = new int[num];
+// for (int i=0; i<num; i++)
+// {
+//     CloneMyRandomArray[i]=MyRandomArray[i];
+// }
+// Console.Write("Клон рандомного массив: ");
+// Console.WriteLine(String.Join(" ", CloneMyRandomArray));
